@@ -732,7 +732,14 @@ class WeatherAppRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
 
-def run_server(port=5000, auto_open=True):
+def run_server(port=None, auto_open=None):
+    import os
+    if port is None:
+        port = int(os.environ.get("PORT", 5000))
+    if auto_open is None:
+        auto_open = "PORT" not in os.environ  # avoid launching browser in headless cloud environments
+    host = "0.0.0.0" if "PORT" in os.environ else "127.0.0.1"
+
     import sys
     if hasattr(sys.stdout, 'reconfigure'):
         try:
@@ -740,11 +747,11 @@ def run_server(port=5000, auto_open=True):
         except Exception:
             pass
 
-    server_address = ("127.0.0.1", port)
+    server_address = (host, port)
     httpd = HTTPServer(server_address, WeatherAppRequestHandler)
     print("=" * 65)
-    print(f"WEATHER ACTIVITY ADVISOR WEB APP IS RUNNING!")
-    print(f"Localhost Link: http://localhost:{port}")
+    print("WEATHER ACTIVITY ADVISOR WEB APP IS RUNNING!")
+    print(f"Serving at: http://{host}:{port}")
     print("=" * 65)
 
     if auto_open:
@@ -758,4 +765,4 @@ def run_server(port=5000, auto_open=True):
 
 
 if __name__ == "__main__":
-    run_server(port=5000, auto_open=True)
+    run_server()

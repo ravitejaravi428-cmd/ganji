@@ -4,6 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![UI](https://img.shields.io/badge/UI-Streamlit%20%2B%20Tkinter-ff4b4b.svg)](https://streamlit.io/)
+[![Deploy](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=ravitejaravi428-cmd/ganji&branch=main&mainModule=app.py)
 [![Architecture](https://img.shields.io/badge/AI%20Model-IF--THEN%20Knowledge%20Base-success.svg)](#ai-system-architecture)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -109,14 +110,39 @@ AI/
 
 ---
 
-## 🚀 How to Run the Application
+## 🌐 Deploy to the Web (Free & Live in 1-Click)
+
+### 🌟 Option 1: Streamlit Community Cloud (Recommended - Free & 1-Click)
+Deploy the interactive web app to the world in under 60 seconds with automatic updates whenever you push commits:
+
+1. Click here: **[Deploy to Streamlit Community Cloud](https://share.streamlit.io/deploy?repository=ravitejaravi428-cmd/ganji&branch=main&mainModule=app.py)**
+2. Sign in with your GitHub account (`ravitejaravi428-cmd`).
+3. Verify the prefilled settings:
+   - **Repository:** `ravitejaravi428-cmd/ganji`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+4. Click **Deploy!**
+5. Your web app is live at `https://<your-custom-subdomain>.streamlit.app`!
+
+### 🚀 Option 2: Render
+1. Go to [render.com](https://render.com) and create a free account.
+2. Click **New +** > **Web Service**.
+3. Connect your repository `ravitejaravi428-cmd/ganji`.
+4. Render will automatically detect `render.yaml` or you can set:
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
+5. Click **Create Web Service**.
+
+---
+
+## 🚀 How to Run the Application Locally
 
 You can run the project using either the **Streamlit Web UI** (recommended for browser demonstration) or the **Tkinter Desktop UI** (runs out of the box with standard Python).
 
 ### 1. Prerequisites & Setup
 Clone the repository (or navigate to the project directory):
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/ravitejaravi428-cmd/ganji.git
 cd AI
 ```
 
